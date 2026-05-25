@@ -98,7 +98,7 @@ export const projects = [
     title: "가중치 기반 정책 추천 알고리즘",
     desc: "우선순위를 순서로만 생각하지 않고, 배낭 알고리즘과 나이브 베이즈 등의 기법을 사용해 현대 사회에 맞는 새로운 우선순위를 제시하는 프로그램입니다.",
     tags: ["LLM", "프롬프트엔지니어링"],
-    image: morphes_main,
+    image: morphesMain,
     link: "",
   }
 ];
