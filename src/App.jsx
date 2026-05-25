@@ -21,7 +21,6 @@ function App() {
   useRevealOnScroll();
 
   return (
-    <link rel="icon" href="/favicon.ico" />
     <main className="site">
       <Nav />
       <Hero heroRef={heroRef} />
