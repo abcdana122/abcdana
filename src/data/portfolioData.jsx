@@ -6,6 +6,7 @@ import endotMain from "./endot_main.png";
 import prompeMain from "./prompe_main.png";
 import llmMain from "./llm_main.png";
 import agriMain from "./agri_main.jpg";
+import morphesMain from "./morphes_main.jpg";
 
 export const navLinks = [
   { href: "#top", label: "Main" },
@@ -30,7 +31,7 @@ export const profile = {
 export const projects = [
   {
     id: "01",
-    category: "IT 소셜벤처 스타트업",
+    category: "2025.05 ~",
     title: "MONAD",
     desc: "'가능성을 연결하다'라는 슬로건 아래, 기술과 사람을 잇기 위해 모인 IT 소셜벤처 스타트업입니다. 현재 창업동아리장 및 CEO로 활동하고 있습니다.",
     tags: ["비즈쿨창업동아리", "IT 소셜벤처"],
@@ -39,7 +40,7 @@ export const projects = [
   },
   {
     id: "02",
-    category: "점자 디스플레이",
+    category: "2025. 8 ~",
     title: "Endot",
     desc: "현재 600만원정도인 점자 디스플레이를 20만원 내외로 줄이기 위한 프로젝트입니다.",
     tags: ["Accessibility", "Hardware"],
@@ -48,7 +49,7 @@ export const projects = [
   },
   {
     id: "03",
-    category: "AI 교육 서비스",
+    category: "2025. 10 ~",
     title: "PrompE",
     desc: "어린 아이들에게 프롬프트 엔지니어링 교육을 제공하는 서비스입니다. 그림을 통해 아이들을 AI 시대의 능동적인 사용자로 성장시킵니다.",
     tags: ["AI", "학생창업팀300+"],
@@ -57,11 +58,47 @@ export const projects = [
   },
   {
     id: "04",
-    category: "LLM 연구",
+    category: "2026. 03 ~",
     title: "페르소나 토큰 최적화",
     desc: "graphRAG를 통해 페르소나를 유지하며, 토큰 비용 또한 줄이는 방법을 찾고 있습니다.",
     tags: ["LLM", "RAG", "페르소나"],
     image: llmMain,
+    link: "",
+  },
+  {
+    id: "05",
+    category: "2025. 10 ~ 2025. 12",
+    title: "PyPing - ★",
+    desc: "게이미피케이션을 통한 Python 교육 프로그램입니다.",
+    tags: ["Python", "교육"],
+    image: "",
+    link: "",
+  },
+  {
+    id: "06",
+    category: "2025. 6 ~ 2025. 9",
+    title: "키다리아저씨",
+    desc: "현대 사회의 기부의 한계에 대해 분석 후, 정서적 후원 구조를 바탕으로 한 서비스 제작하였습니다. 초반에는 코사인 유사도를 바탕으로, 잘 맞는 아동을 매칭하는 서비스를 제작했고 이후에는 GNN을 활용해 정확도를 향상시켰습니다.",
+    tags: ["Python", "교육"],
+    image: "",
+    link: "",
+  },
+  {
+    id: "07",
+    category: "2025. 9 ~ 2025. 12",
+    title: "Morphes",
+    desc: "AI 활용 능력의 본질은 '얼마나 그 기술을 정확히 아는가'입니다. 아이디어를 완벽한 언어로 변환하는 프롬프트 작성 엔진입니다.",
+    tags: ["LLM", "프롬프트엔지니어링"],
+    image: morphes_main,
+    link: "",
+  },
+  {
+    id: "08",
+    category: "2025. 3 ~ 2025. 7",
+    title: "가중치 기반 정책 추천 알고리즘",
+    desc: "우선순위를 순서로만 생각하지 않고, 배낭 알고리즘과 나이브 베이즈 등의 기법을 사용해 현대 사회에 맞는 새로운 우선순위를 제시하는 프로그램입니다.",
+    tags: ["LLM", "프롬프트엔지니어링"],
+    image: morphes_main,
     link: "",
   }
 ];
