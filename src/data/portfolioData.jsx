@@ -22,7 +22,7 @@ export const profile = {
   rows: [
     { label: "Name", value: "김단아" },
     { label: "Birth", value: "2009.10.22" },
-    { label: "School", value: "한국디지털미디어고등학교", logo: dimigoLogo, link: "https://dimigo.hs.kr" },
+    { label: "School", value: "한국디지털미디어고등학교 (웹프로그래밍과 24기)", logo: dimigoLogo, link: "https://dimigo.hs.kr" },
     { label: "Blog", value: "아단아 코딩일지", logo: monadLogo, link: "https://adanacoding.tistory.com/" },
     { label: "Proof", value: "국제정보올림피아드 겨울학교 수료", logo: ioiLogo },
   ],
