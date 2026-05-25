@@ -184,7 +184,7 @@ export const contact = {
 export const pressItems = [
   {
     id: "01",
-    title: "한국코드페어 수상 관련",
+    title: "한국코드페어 4년 수상",
     desc: "분리수거 키오스크가 시각장애인이 이용하기에 어려움이 있어 음성 인식으로 해결 (2022)",
     image: "https://img.etnews.com/photonews/2212/1604673_20221220103845_888_0003.jpg",
     link: "https://www.etnews.com/20221220000074",
