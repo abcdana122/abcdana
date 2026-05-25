@@ -1,0 +1,135 @@
+/* ================================
+   GLOBAL
+================================ */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #050505;
+  --text: #f3f3ef;
+  --muted: #9b9b95;
+  --accent: #8dffb8;
+  --line: rgba(255, 255, 255, 0.12);
+
+  --font-main: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  --font-point: "Instrument Serif", Georgia, serif;
+
+  --frame-width: min(1080px, calc(100vw - 160px));
+
+  --pin-top: 140px;
+  --pin-start-offset: 200px;
+  --pin-distance: 540px;
+  --pin-progress: 0;
+
+  --intro-pin-top: 118px;
+  --intro-pin-distance: 720px;
+  --intro-progress: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.site {
+  min-height: 100vh;
+  overflow-x: clip;
+
+  background:
+    radial-gradient(
+      circle at 78% 10%,
+      rgba(141, 255, 184, 0.025),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 18% 76%,
+      rgba(255, 255, 255, 0.03),
+      transparent 22%
+    ),
+    linear-gradient(180deg, #050505 0%, #090909 100%);
+}
+
+.eyebrow {
+  margin: 0 0 28px;
+
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+
+.eyebrow-right {
+  width: 100%;
+  text-align: right;
+}
+
+#about,
+#awards,
+#contact {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 980px) {
+  :root {
+    --frame-width: calc(100% - 48px);
+
+    --pin-top: 48px;
+    --pin-start-offset: 96px;
+    --pin-distance: 420px;
+
+    --intro-pin-top: 48px;
+    --intro-pin-distance: 520px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --frame-width: calc(100% - 32px);
+
+    --pin-top: 28px;
+    --pin-start-offset: 76px;
+    --pin-distance: 340px;
+
+    --intro-pin-top: 28px;
+    --intro-pin-distance: 460px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .browser-shell,
+  .intro-sticky,
+  .hero-copy,
+  .hero-bottom-row,
+  .project-card {
+    transition: none;
+    transform: none;
+  }
+}
