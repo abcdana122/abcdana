@@ -5,6 +5,7 @@ import monadMain from "./monad_main.png";
 import endotMain from "./endot_main.png";
 import prompeMain from "./prompe_main.png";
 import llmMain from "./llm_main.png";
+import agriMain from "./agri_main.png";
 
 export const navLinks = [
   { href: "#top", label: "Main" },
@@ -161,7 +162,7 @@ export const pressItems = [
     id: "03",
     title: "농업AI 경진대회 수상 관련",
     desc: "우리의 논을 지키고, 농촌 고령화에 대비하기 위한 인공지능 개발 (2025)",
-    image: "http://www.ansannews.co.kr/news/photo/202509/15732_14266_1138.jpg",
+    image: agriMain,
     link: "http://www.ansannews.co.kr/news/articleView.html?idxno=15732",
   },
   {
