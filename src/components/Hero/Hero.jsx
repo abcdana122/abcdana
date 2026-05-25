@@ -21,7 +21,7 @@ export function Hero({ heroRef }) {
 
           <div className="browser-body">
             <div className="hero-copy">
-              <p className="eyebrow">Hello! I'm Danah Kim.</p>
+              <p className="eyebrow">Hello! I'm Danah Kim 👩‍💻🌱</p>
 
               <h1>
                 <span className="line">I connect possibilities</span>
