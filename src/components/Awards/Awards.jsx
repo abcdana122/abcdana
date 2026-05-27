@@ -7,9 +7,13 @@ const AWARD_PREVIEW_COUNT = 4;
 const parseAwardItem = (item) => {
   const match = item.match(/^(\d{4}(?:-\d{4})?)\s+(.+)$/);
 
+  const rawTitle = match ? match[2] : item;
+  const detailMatch = rawTitle.match(/^(.*?)\s*(\(.+\))$/);
+
   return {
     year: match ? match[1] : "ARCHIVE",
-    title: match ? match[2] : item,
+    title: detailMatch ? detailMatch[1] : rawTitle,
+    detail: detailMatch ? detailMatch[2] : "",
   };
 };
 
@@ -62,7 +66,12 @@ export function Awards() {
                   style={{ "--item-delay": `${index * 45}ms` }}
                 >
                   <span className="trophy-year">{award.year}</span>
-                  <h3>{award.title}</h3>
+                  <h3>
+                    <span className="award-title-main">{award.title}</span>
+                    {award.detail && (
+                      <span className="award-title-detail">{award.detail}</span>
+                    )}
+                  </h3>
                 </article>
               );
             })}
