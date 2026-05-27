@@ -24,7 +24,7 @@ export const profile = {
     { label: "Birth", value: "2009.10.22" },
     { label: "School", value: "한국디지털미디어고등학교 (웹프로그래밍과 24기)", logo: dimigoLogo, link: "https://dimigo.hs.kr" },
     { label: "Blog", value: "아단아 코딩일지", logo: monadLogo, link: "https://adanacoding.tistory.com/" },
-    { label: "Proof", value: "국제정보올림피아드 겨울학교 수료", logo: ioiLogo },
+    { label: "Proof", value: "국제정보올림피아드 국가대표 교육생", logo: ioiLogo },
   ],
 };
 
@@ -109,10 +109,10 @@ export const awardTabs = [
     label: "Preview",
     eyebrow: "AWARD OVERVIEW",
     items: [
-      "2026 아시아태평양정보올림피아드 출전",
-      "2026 화성시 청소년 의회 의장",
+      "2026 아시아태평양정보올림피아드 국가대표",
+      "2026 화성시의회 청소년 의장",
       "2025 국제정보올림피아드 여름/겨울학교 수료",
-      "2024 IT 올림피아드 프로그래밍 부문 대상 (과기부장관상)",
+      "2024 IT 올림피아드 프로그래밍 부문 대상 (과학기술정보통신부장관상)",
     ],
   },
   {
@@ -121,11 +121,12 @@ export const awardTabs = [
     eyebrow: "AWARD TRACK / ALGORITHM",
     items: [
       "2026 아시아태평양정보올림피아드 출전",
-      "2026 한국정보올림피아드 1차 동상",
+      "2026 한국정보올림피아드 고등부 1차 동상",
       "2026 제4회 디미고 프로그래밍 챌린지 출제진",
-      "2025 국제정보올림피아드 여름/겨울학교 수료",
-      "2025 한국정보올림피아드 2차 장려상",
-      "2025 한국정보올림피아드 1차 동상",
+      "2026 국제정보올림피아드 국가대표 교육생 (겨울학교 수료)",
+      "2025 국제정보올림피아드 국가대표 교육생 (여름학교 수료)",
+      "2025 한국정보올림피아드 2차 고등부 장려상",
+      "2025 한국정보올림피아드 1차 고등부 동상",
       "2024 IT 올림피아드 프로그래밍 부문 대상 (장관상)",
       "2024 아시아태평양정보올림피아드 출전",
       "2024 한국정보올림피아드 은상",
@@ -141,17 +142,17 @@ export const awardTabs = [
     label: "Development",
     eyebrow: "AWARD TRACK / SOFTWARE & AI",
     items: [
-      "2025 Future and Dream AI Challenges 동상",
-      "2025 제 7회 한국코드페어 해커톤 동상",
+      "2025 제 7회 한국코드페어 해커톤 동상 (대한민국 SW 인재 시상)",
+      "2025 Future and Dream AI Challenges 동상 (한국인공지능소프트웨어산업협회)",
       "2025 파이썬 프로그래밍 교과우수상",
-      "2025 AI SoftwarePlay 용인 우수상",
-      "2025 고교 SW미래채움 AI챌린지 창의상",
-      "2024 생성형 AI 활용대전 우수상",
-      "2024 제 6회 한국코드페어 해커톤 동장",
-      "2023 청소년IT경시대회 파이썬 부문 은상",
-      "2023 제 5회 한국코드페어 해커톤 은상",
-      "2023 가나다라 코딩대회 대상",
-      "2023 SW 사고력 올림피아드 은상",
+      "2025 AI SoftwarePlay 용인 우수상 (경희대학교 AI/SW 교육단장)",
+      "2025 고교 SW미래채움 AI챌린지 창의상 (과학기술통신부, EBS 주관)",
+      "2024 생성형 AI 활용대전 우수상 (한국 에듀테크 산업 협회)",
+      "2024 제 6회 한국코드페어 해커톤 동장 (대한민국 SW 인재 시상)",
+      "2023 청소년IT경시대회 파이썬 부문 은상 (한국정보기술진흥원)",
+      "2023 제 5회 한국코드페어 해커톤 은상 (대한민국 SW 인재 시상)",
+      "2023 가나다라 코딩대회 대상 (국립한글박물관 관장상)",
+      "2023 SW 사고력 올림피아드 은상 (서울교육대학교, 한국소프트웨어산업협회)",
       "2022 제 4회 한국코드페어 해커톤 동상",
     ],
   },
@@ -162,6 +163,44 @@ export const awardTabs = [
     items: [
       "2026 학생창업유망팀 300+ 서류 합격 (진행 중)",
       "2026 한국디지털미디어고등학교 학생자치법정 법정장",
+      "2026 화성시 청소년 의회 의장",
+      "2026 모나드 창업동아리장 (CEO)",
+      "2026 제4회 디미고 프로그래밍 챌린지 운영진",
+      "2025 사회 교과우수상",
+      "2025 AI/디지털 네이티브 토론대회 준우승 (과학기술정보통신부 주최, NIA 원장상)",
+      "2025 AGRI TED 최우수상 (농립축산식품부)",
+      "2025 한국디지털미디어고등학교 학생자치법정 변호사",
+      "2023 경기청소년 강연대회 우수상 (경기도지사상)",
+      "2023 수원다산중 창의융합영재재반 수료",
+    ],
+  },
+];
+
+export const contact = {
+  eyebrow: "CONTACT",
+  title: "Let’s connect possibilities.",
+  email: "abcdana122@gmail.com",
+};
+
+export const pressItems = [
+  {
+    id: "01",
+    title: "한국코드페어 4년 연속 수상 (SW 인재상)",
+    desc: "분리수거 키오스크가 시각장애인이 이용하기에 어려움이 있어 음성 인식으로 해결 (2022)",
+    image: "https://img.etnews.com/photonews/2212/1604673_20221220103845_888_0003.jpg",
+    link: "https://www.etnews.com/20221220000074",
+  },
+  {
+    id: "02",
+    title: "청소년 강연대회 수상 관련",
+    desc: "생성형 인공지능 시대에서 갖고 있어야 할 것들에 대해 소개 (2023)",
+    image: "https://cdn.econonews.co.kr/news/photo/202305/288022_273823_1712.jpg",
+    link: "https://www.econonews.co.kr/news/articleView.html?idxno=288022",
+  },
+  {
+    id: "03",
+    title: "농업AI 경진대회 수상 관련",
+    desc: "농촌 고령화에 대비하기 위한 인공지능 개발 (2025)", 농림축산     "2026 한국디지털미디어고등학교 학생자치법정 법정장",
       "2026 화성시 청소년 의회 의장",
       "2026 모나드 창업동아리장 (CEO)",
       "2026 제4회 디미고 프로그래밍 챌린지 운영진",
@@ -184,7 +223,7 @@ export const contact = {
 export const pressItems = [
   {
     id: "01",
-    title: "한국코드페어 4년 수상",
+    title: "한국코드페어 4년 연속 수상 (SW 인재상)",
     desc: "분리수거 키오스크가 시각장애인이 이용하기에 어려움이 있어 음성 인식으로 해결 (2022)",
     image: "https://img.etnews.com/photonews/2212/1604673_20221220103845_888_0003.jpg",
     link: "https://www.etnews.com/20221220000074",
@@ -199,7 +238,7 @@ export const pressItems = [
   {
     id: "03",
     title: "농업AI 경진대회 수상 관련",
-    desc: "우리의 논을 지키고, 농촌 고령화에 대비하기 위한 인공지능 개발 (2025)",
+    desc: "농촌 고령화에 대비하기 위한 인공지능 개발 (2025, 농림축산부)",
     image: agriMain,
     link: "http://www.ansannews.co.kr/news/articleView.html?idxno=15732",
   },
@@ -212,8 +251,8 @@ export const pressItems = [
   },
   {
     id: "05",
-    title: "화성시 뱃놀이 축제 관련",
-    desc: "화성시 청소년 대표로 개막식 퍼레이드 및 퍼포먼스 참여 (2026)",
+    title: "화성시 뱃놀이 축제 개막식",
+    desc: "화성시의회 청소년 의장으로 조선 통신사선 탑승, 개막식 퍼레이드 및 퍼포먼스 참여 (2026. 05. 23, 전곡항)",
     image: "https://imgnews.pstatic.net/image/666/2026/05/23/0000108289_002_20260525130616801.jpg?type=w860",
     link: "https://n.news.naver.com/article/666/0000108289?sid=102",
   },
