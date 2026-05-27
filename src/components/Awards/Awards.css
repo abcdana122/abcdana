@@ -254,6 +254,25 @@
   background: rgba(255, 255, 255, 0.72);
 }
 
+.trophy-log-item h3 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.award-title-main {
+  display: block;
+}
+
+.award-title-detail {
+  display: block;
+  font-size: 0.78em;
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0.58;
+  letter-spacing: -0.03em;
+}
+
 @keyframes trophyItemIn {
   to {
     opacity: 1;
