@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/hair-mong/share/:slug/",
+      "destination": "https://hair-mong.vercel.app/hair-mong/share/:slug/index.html"
+    },
+    {
+      "source": "/hair-mong/share/:slug",
+      "destination": "https://hair-mong.vercel.app/hair-mong/share/:slug/index.html"
+    },
+    {
       "source": "/hair-mong",
       "destination": "https://hair-mong.vercel.app/hair-mong"
     },
