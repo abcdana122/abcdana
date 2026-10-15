@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/hair-mong",
+      "destination": "https://hair-mong.vercel.app/hair-mong"
+    },
+    {
+      "source": "/hair-mong/:path*",
+      "destination": "https://hair-mong.vercel.app/hair-mong/:path*"
+    },
+    {
+      "source": "/api/hair-mong/:path*",
+      "destination": "https://hair-mong.vercel.app/api/hair-mong/:path*"
+    }
+  ]
+}
