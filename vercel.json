@@ -1,6 +1,18 @@
 {
   "rewrites": [
     {
+      "source": "/hh",
+      "destination": "https://harmony-lab.abcdana.com/hh"
+    },
+    {
+      "source": "/hh/",
+      "destination": "https://harmony-lab.abcdana.com/hh/"
+    },
+    {
+      "source": "/hh/:path*",
+      "destination": "https://harmony-lab.abcdana.com/hh/:path*"
+    },
+    {
       "source": "/hair-mong/share/:slug/",
       "destination": "https://hair-mong.vercel.app/hair-mong/share/:slug/index.html"
     },
