@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/trie",
+      "destination": "/trie/index.html"
+    },
+    {
+      "source": "/trie/",
+      "destination": "/trie/index.html"
+    },
+    {
       "source": "/hh",
       "destination": "https://harmony-lab.abcdana.com/hh"
     },
