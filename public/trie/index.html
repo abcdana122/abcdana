@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <base href="/trie/">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="IPv4 최장 접두사 일치를 직접 살펴보고 이진 트라이 경로 압축 전후의 구조와 탐색 과정을 비교하세요.">
+  <meta name="theme-color" content="#112733">
+  <title>트라이 경로 압축 시뮬레이터</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23112733'/%3E%3Cpath d='M24 10v13M12 35V23h24v12' stroke='%2357dfce' stroke-width='3' fill='none'/%3E%3Ccircle cx='24' cy='10' r='4' fill='%2357dfce'/%3E%3Ccircle cx='12' cy='35' r='4' fill='%2357dfce'/%3E%3Ccircle cx='36' cy='35' r='4' fill='%2357dfce'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><svg width="25" height="25" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5v10M7 26V15h18v11" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="5" r="3"/><circle cx="7" cy="26" r="3"/><circle cx="25" cy="26" r="3"/></svg>TRIE LAB</a><span>IPv4 라우팅 실험실</span><button class="quiet" id="export">결과 내려받기</button></header>
+<main>
+  <section class="intro"><p class="eyebrow">LONGEST PREFIX MATCH</p><h1>경로는 같게.<br>트라이는 간결하게.</h1><p>목적지 IP를 검색하고, 경로 압축 전후의<br class="desktop-br"> 구조와 최장 접두사 선택 과정을 비교하세요.</p><div class="intro-symbol" aria-hidden="true"><span>0</span><i></i><span>01</span><i></i><span>0110</span></div></section>
+  <section class="workbench" aria-label="실험 조건">
+    <div class="scenario-tabs" role="group" aria-label="경로 모형"><button class="scenario active" data-mode="0" aria-pressed="true"><b>A</b> 기본 설계</button><button class="scenario" data-mode="1" aria-pressed="false"><b>B</b> 겹치는 /24</button><button class="scenario" data-mode="2" aria-pressed="false"><b>C</b> 기본 경로 /0</button></div>
+    <p id="scenario-detail" class="scenario-detail"></p>
+    <form id="lookup-form" novalidate><div class="input-group"><label for="destination">목적지 IPv4 주소</label><input id="destination" name="destination" value="192.168.10.42" spellcheck="false" autocomplete="off" inputmode="decimal" aria-describedby="input-error"></div><button class="primary" type="submit">경로 검색</button></form>
+    <p id="input-error" class="error" role="alert" hidden></p>
+    <div class="examples"><span>예제</span><button data-ip="192.168.10.2">학생 .2</button><button data-ip="192.168.10.42">서버 .42</button><button data-ip="192.168.10.50">표지 불일치 .50</button><button data-ip="192.168.10.128">분기 없음 .128</button><button data-ip="203.0.113.7">외부 주소</button></div>
+  </section>
+  <section class="outcome" aria-live="polite" aria-atomic="true"><div><span class="eyebrow">선택한 경로</span><h2 id="selected-prefix"></h2><p id="selected-action"></p></div><div class="verdict" id="verdict"></div></section>
+  <section class="metrics" aria-label="압축 전후 비교"><div><span>전체 노드</span><p><b id="raw-nodes"></b><span class="metric-arrow">→</span><strong id="packed-nodes"></strong></p><small id="reduction"></small></div><div><span>방문 노드</span><p><b id="raw-visits"></b><span class="metric-arrow">→</span><strong id="packed-visits"></strong></p><small>루트와 검사한 자식 포함</small></div><div><span>비교 비트</span><p><b id="raw-bits"></b><span class="metric-arrow">→</span><strong id="packed-bits"></strong></p><small>간선 표지를 대조한 비트 수</small></div></section>
+  <section class="graph-section"><div class="section-head"><div><h2>트라이 구조</h2><p>경로가 있는 노드와 분기 노드는 압축 후에도 유지합니다.</p></div><div class="segmented" role="group" aria-label="트라이 표시 방식"><button id="view-packed" class="active" aria-pressed="true">압축 트라이</button><button id="view-raw" aria-pressed="false">일반 트라이</button></div></div><div class="graph-legend"><span><i class="route-dot"></i>경로 정보</span><span><i class="branch-dot"></i>분기·중간 노드</span><span><i class="visited-dot"></i>탐색 경로</span></div><div id="graph" class="graph" tabindex="0" role="region" aria-label="트라이 그래프, 넘치는 경우 스크롤할 수 있습니다"></div><p class="graph-note" id="graph-note"></p></section>
+  <section class="details-grid"><div class="route-table-section"><h2>검색 대상 경로</h2><p class="section-sub">현재 모형에 저장된 목적지 접두사입니다.</p><div class="table-wrap"><table><thead><tr><th scope="col">접두사</th><th scope="col">다음 홉 또는 인터페이스</th></tr></thead><tbody id="routes"></tbody></table></div></div><div class="trace-section"><div class="section-head"><div><h2>단계별 탐색</h2><p id="trace-caption"></p></div><span id="step-count" class="mono"></span></div><div id="trace" class="trace"></div><div class="step-buttons"><button id="previous" class="secondary">이전 단계</button><button id="next" class="secondary">다음 단계</button><button id="all-steps" class="quiet dark">전체 과정</button></div><p id="candidate" class="candidate"></p></div></section>
+  <details class="explanation"><summary>실험을 해석하는 방법과 모형의 범위</summary><div><p><b>B 모형에서 .42를 검색하세요.</b> /24와 /30이 모두 일치하지만 더 긴 /30을 선택합니다. .50은 /24 후보를 저장하고 /26까지 이동한 뒤 간선 표지 10의 두 번째 비트에서 불일치하므로 /24 후보를 유지합니다. .128은 /24 다음 비트에 해당하는 자식이 없어 /24 후보를 유지합니다.</p><p><b>압축은 경로를 지우는 과정이 아닙니다.</b> 경로 정보가 없고 자식이 하나뿐인 중간 노드만 합칩니다. 합친 간선의 비트열 전체를 검사해야 합니다. /24처럼 경로를 가진 노드는 자식이 하나여도 남깁니다.</p><p><b>노드 수 감소율은 속도 향상률이 아닙니다.</b> 간선 표지 저장 공간과 비교 비용이 있습니다. 방문 노드에는 불일치 표지를 검사한 자식도 포함하고, 비교 비트에는 자식 선택을 위한 딕셔너리 조회는 포함하지 않습니다.</p><p>이 시뮬레이터는 설치된 것으로 가정한 IPv4 목적지 경로의 검색만 다룹니다. 경로 설치, 로컬 /32, ECMP, 실제 링크·VLAN·DNS 동작은 생략합니다. B와 C의 Null0는 검증용 폐기 동작입니다. 실제 Cisco IOS나 Linux LC-trie 전체를 재현하지 않습니다.</p><p class="source-links"><a href="https://www.rfc-editor.org/rfc/rfc1812.html" target="_blank" rel="noreferrer">RFC 1812</a><a href="https://docs.kernel.org/6.9/networking/fib_trie.html" target="_blank" rel="noreferrer">Linux 경로 압축 문서</a></p></div></details>
+  <footer>네트워크 구축 기획서의 경로 선택 검산 모형 <span>브라우저에서 계산합니다.</span></footer>
+</main>
+<noscript>시뮬레이터를 사용하려면 브라우저에서 JavaScript를 허용하세요.</noscript>
+</body></html>

@@ -1,0 +1,243 @@
+{
+  "tests": {
+    "passed": 7223,
+    "failed": 0,
+    "seed": 2303
+  },
+  "scenarios": [
+    {
+      "scenario": "A 실제 설계 모형",
+      "raw_nodes": 34,
+      "compressed_nodes": 8,
+      "cases": [
+        {
+          "destination": "192.168.10.2",
+          "selected": "192.168.10.0/27",
+          "action": "Fa0/0.20 (student)",
+          "raw_visits": 28,
+          "compressed_visits": 3,
+          "raw_bit_comparisons": 27,
+          "compressed_bit_comparisons": 27,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.34",
+          "selected": "192.168.10.32/29",
+          "action": "Fa0/0.10 (teacher)",
+          "raw_visits": 30,
+          "compressed_visits": 4,
+          "raw_bit_comparisons": 29,
+          "compressed_bit_comparisons": 29,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.42",
+          "selected": "192.168.10.40/30",
+          "action": "next hop 192.168.10.46 via Serial0/0/0",
+          "raw_visits": 31,
+          "compressed_visits": 5,
+          "raw_bit_comparisons": 30,
+          "compressed_bit_comparisons": 30,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.46",
+          "selected": "192.168.10.44/30",
+          "action": "Serial0/0/0 (connected)",
+          "raw_visits": 31,
+          "compressed_visits": 5,
+          "raw_bit_comparisons": 30,
+          "compressed_bit_comparisons": 30,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.50",
+          "selected": null,
+          "action": null,
+          "raw_visits": 28,
+          "compressed_visits": 3,
+          "raw_bit_comparisons": 27,
+          "compressed_bit_comparisons": 28,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.128",
+          "selected": null,
+          "action": null,
+          "raw_visits": 25,
+          "compressed_visits": 2,
+          "raw_bit_comparisons": 24,
+          "compressed_bit_comparisons": 25,
+          "same_result": true
+        },
+        {
+          "destination": "203.0.113.7",
+          "selected": null,
+          "action": null,
+          "raw_visits": 5,
+          "compressed_visits": 2,
+          "raw_bit_comparisons": 4,
+          "compressed_bit_comparisons": 5,
+          "same_result": true
+        }
+      ],
+      "compressed_tree": "root /0\n+-- 11000000101010000000101000 /26\n    +-- 0 /27  [192.168.10.0/27: Fa0/0.20 (student)]\n    +-- 10 /28\n        +-- 0 /29  [192.168.10.32/29: Fa0/0.10 (teacher)]\n        +-- 1 /29\n            +-- 0 /30  [192.168.10.40/30: next hop 192.168.10.46 via Serial0/0/0]\n            +-- 1 /30  [192.168.10.44/30: Serial0/0/0 (connected)]"
+    },
+    {
+      "scenario": "B 검증용 /24 추가",
+      "raw_nodes": 34,
+      "compressed_nodes": 9,
+      "cases": [
+        {
+          "destination": "192.168.10.2",
+          "selected": "192.168.10.0/27",
+          "action": "Fa0/0.20 (student)",
+          "raw_visits": 28,
+          "compressed_visits": 4,
+          "raw_bit_comparisons": 27,
+          "compressed_bit_comparisons": 27,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.34",
+          "selected": "192.168.10.32/29",
+          "action": "Fa0/0.10 (teacher)",
+          "raw_visits": 30,
+          "compressed_visits": 5,
+          "raw_bit_comparisons": 29,
+          "compressed_bit_comparisons": 29,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.42",
+          "selected": "192.168.10.40/30",
+          "action": "next hop 192.168.10.46 via Serial0/0/0",
+          "raw_visits": 31,
+          "compressed_visits": 6,
+          "raw_bit_comparisons": 30,
+          "compressed_bit_comparisons": 30,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.46",
+          "selected": "192.168.10.44/30",
+          "action": "Serial0/0/0 (connected)",
+          "raw_visits": 31,
+          "compressed_visits": 6,
+          "raw_bit_comparisons": 30,
+          "compressed_bit_comparisons": 30,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.50",
+          "selected": "192.168.10.0/24",
+          "action": "Null0 (test only)",
+          "raw_visits": 28,
+          "compressed_visits": 4,
+          "raw_bit_comparisons": 27,
+          "compressed_bit_comparisons": 28,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.128",
+          "selected": "192.168.10.0/24",
+          "action": "Null0 (test only)",
+          "raw_visits": 25,
+          "compressed_visits": 2,
+          "raw_bit_comparisons": 24,
+          "compressed_bit_comparisons": 24,
+          "same_result": true
+        },
+        {
+          "destination": "203.0.113.7",
+          "selected": null,
+          "action": null,
+          "raw_visits": 5,
+          "compressed_visits": 2,
+          "raw_bit_comparisons": 4,
+          "compressed_bit_comparisons": 5,
+          "same_result": true
+        }
+      ],
+      "compressed_tree": "root /0\n+-- 110000001010100000001010 /24  [192.168.10.0/24: Null0 (test only)]\n    +-- 00 /26\n        +-- 0 /27  [192.168.10.0/27: Fa0/0.20 (student)]\n        +-- 10 /28\n            +-- 0 /29  [192.168.10.32/29: Fa0/0.10 (teacher)]\n            +-- 1 /29\n                +-- 0 /30  [192.168.10.40/30: next hop 192.168.10.46 via Serial0/0/0]\n                +-- 1 /30  [192.168.10.44/30: Serial0/0/0 (connected)]"
+    },
+    {
+      "scenario": "C 검증용 기본 경로 추가",
+      "raw_nodes": 34,
+      "compressed_nodes": 8,
+      "cases": [
+        {
+          "destination": "192.168.10.2",
+          "selected": "192.168.10.0/27",
+          "action": "Fa0/0.20 (student)",
+          "raw_visits": 28,
+          "compressed_visits": 3,
+          "raw_bit_comparisons": 27,
+          "compressed_bit_comparisons": 27,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.34",
+          "selected": "192.168.10.32/29",
+          "action": "Fa0/0.10 (teacher)",
+          "raw_visits": 30,
+          "compressed_visits": 4,
+          "raw_bit_comparisons": 29,
+          "compressed_bit_comparisons": 29,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.42",
+          "selected": "192.168.10.40/30",
+          "action": "next hop 192.168.10.46 via Serial0/0/0",
+          "raw_visits": 31,
+          "compressed_visits": 5,
+          "raw_bit_comparisons": 30,
+          "compressed_bit_comparisons": 30,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.46",
+          "selected": "192.168.10.44/30",
+          "action": "Serial0/0/0 (connected)",
+          "raw_visits": 31,
+          "compressed_visits": 5,
+          "raw_bit_comparisons": 30,
+          "compressed_bit_comparisons": 30,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.50",
+          "selected": "0.0.0.0/0",
+          "action": "Null0 (test only)",
+          "raw_visits": 28,
+          "compressed_visits": 3,
+          "raw_bit_comparisons": 27,
+          "compressed_bit_comparisons": 28,
+          "same_result": true
+        },
+        {
+          "destination": "192.168.10.128",
+          "selected": "0.0.0.0/0",
+          "action": "Null0 (test only)",
+          "raw_visits": 25,
+          "compressed_visits": 2,
+          "raw_bit_comparisons": 24,
+          "compressed_bit_comparisons": 25,
+          "same_result": true
+        },
+        {
+          "destination": "203.0.113.7",
+          "selected": "0.0.0.0/0",
+          "action": "Null0 (test only)",
+          "raw_visits": 5,
+          "compressed_visits": 2,
+          "raw_bit_comparisons": 4,
+          "compressed_bit_comparisons": 5,
+          "same_result": true
+        }
+      ],
+      "compressed_tree": "root /0 [0.0.0.0/0: Null0 (test only)]\n+-- 11000000101010000000101000 /26\n    +-- 0 /27  [192.168.10.0/27: Fa0/0.20 (student)]\n    +-- 10 /28\n        +-- 0 /29  [192.168.10.32/29: Fa0/0.10 (teacher)]\n        +-- 1 /29\n            +-- 0 /30  [192.168.10.40/30: next hop 192.168.10.46 via Serial0/0/0]\n            +-- 1 /30  [192.168.10.44/30: Serial0/0/0 (connected)]"
+    }
+  ]
+}
